@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 20px;
+    border: 10px solid #000; /* Stylish border */
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.liquor-info button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.liquor-info button:hover {
+    background-color: #333;
+}
+
+.purchased {
+    text-decoration: line-through;
+    background-color: #d3d3d3;
+}
