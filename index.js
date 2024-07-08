@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateShoppingListDisplay();
 
         // Change button color to red when clicked
-        button.style.backgroundColor = 'red';
+        if (button) {
+            button.style.backgroundColor = 'red';
+        }
     }
 
     function updateShoppingListDisplay() {
@@ -58,5 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
             let itemPrice = parseInt(this.parentElement.querySelector('p').textContent.replace('Price: ksh ', '').replace(',', ''));
             addToList(itemName, itemPrice, this);
         });
+    });
+
+    // Add functionality for the input bar
+    document.getElementById('add-item').addEventListener('click', function() {
+        let itemName = document.getElementById('item-input').value;
+        let itemPrice = parseInt(document.getElementById('price-input').value);
+        if (itemName && itemPrice) {
+            addToList(itemName, itemPrice, null);
+            document.getElementById('item-input').value = '';
+            document.getElementById('price-input').value = '';
+        } else {
+            alert('Please enter both item name and price.');
+        }
     });
 });
